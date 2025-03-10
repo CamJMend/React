@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './weather.css'; // Asegúrate de que el archivo CSS esté importado
+import './weather.css';
 
 const WeatherApp = () => {
   const [city, setCity] = useState('');
@@ -40,7 +40,7 @@ const WeatherApp = () => {
           onChange={(e) => setCity(e.target.value)}
         />
         <button onClick={() => checkWeather(city)}>
-          <img src="images/search.png" alt="Search" />
+          <img src="../assets/images/search.png" alt="Search" />
         </button>
       </div>
 

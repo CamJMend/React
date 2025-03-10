@@ -1,0 +1,16 @@
+#campo {
+    width: 400px;
+    background-color: rgb(80, 80, 80);
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 1em;
+    position: relative;
+    top: 210px;
+}
+
+.tar {
+    background-color: gray;
+    width: 500px;
+    height: 300px;
+    border-radius: 20px;
+}

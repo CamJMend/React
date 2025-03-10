@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './validation.css';
 
 function luhnCheck(cardNumber) {
   const arr = cardNumber.split("").reverse().map(Number);
@@ -19,7 +20,7 @@ function CreditCardValidation() {
   const handleChange = (e) => {
     const value = e.target.value.replace(/\D/g, ""); // solo números
     setCardNumber(value);
-    if (value.length >= 13) {
+    if (value.length == 16) {
       setIsValid(luhnCheck(value));
     } else {
       setIsValid(null);
@@ -29,10 +30,12 @@ function CreditCardValidation() {
   return (
     <div>
       <h2>Validación de Tarjeta</h2>
-      <input type="text" value={cardNumber} onChange={handleChange} placeholder="Ingresa el número" />
-      {isValid !== null && (
-        <p>{isValid ? "✅ Tarjeta válida" : "❌ Tarjeta inválida"}</p>
-      )}
+      <div className="tar">
+        <input id="campo" type="text" value={cardNumber} onChange={handleChange} placeholder="Ingresa el número" />
+        {isValid !== null && (
+          <p>{isValid ? "✅ Tarjeta válida" : "❌ Tarjeta inválida"}</p>
+        )}
+      </div>
     </div>
   );
 }

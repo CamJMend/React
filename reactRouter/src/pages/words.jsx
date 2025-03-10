@@ -9,7 +9,7 @@ function WordList() {
 
   useEffect(() => {
     if (showList) {
-      setWords(["hello", "react", "hooks"]);
+      setWords([]);
     }
 
     return () => {
