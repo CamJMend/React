@@ -40,7 +40,7 @@ const WeatherApp = () => {
       <div className="search">
         <input
           type="text"
-          placeholder="Enter city name"
+          placeholder="Nombre de Ciudad"
           spellCheck="false"
           value={city}
           onChange={(e) => setCity(e.target.value)}
@@ -50,13 +50,13 @@ const WeatherApp = () => {
 
       {error && (
         <div className="error">
-          <p>Invalid city name</p>
+          <p>Ciudad Invalida</p>
         </div>
       )}
 
       {loading && (
         <div className="loading">
-          <p>Loading...</p>
+          <p>Cargando...</p>
         </div>
       )}
 
@@ -68,13 +68,13 @@ const WeatherApp = () => {
             <div className="col">
               <div>
                 <p className="humidity">{weatherData.main.humidity}%</p>
-                <p>Humidity</p>
+                <p>Humedad</p>
               </div>
             </div>
             <div className="col">
               <div>
                 <p className="wind">{weatherData.wind.speed} km/h</p>
-                <p>Wind Speed</p>
+                <p>Velocidad del viento</p>
               </div>
             </div>
           </div>
