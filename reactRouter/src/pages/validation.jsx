@@ -18,12 +18,12 @@ function CreditCardValidation() {
   const [isValid, setIsValid] = useState(null);
 
   const handleChange = (e) => {
-    const value = e.target.value.replace(/\D/g, ""); // solo números
+    const value = e.target.value.replace(/\D/g, ""); 
     setCardNumber(value);
     if (value.length == 16) {
       setIsValid(luhnCheck(value));
     } else {
-      setIsValid(null);
+      setIsValid(false);
     }
   };
 

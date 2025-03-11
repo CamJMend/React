@@ -34,14 +34,9 @@
     width: 60px;
     height: 60px;
     cursor: pointer;
+    color: #555;
 }
-.search button img{
-    width: 19px;
-}
-.weather-icon{
-    width: 170px;
-    margin-top: 30px;
-}
+
 .weather h1{
     font-size: 80px;
     font-weight: 500;
@@ -63,10 +58,7 @@
     align-items: center;
     text-align: left;
 }
-.col img{
-    width: 40px;
-    margin-right: 10px;
-}
+
 .humidity, .wind{
     font-size: 28px;
     margin-top: -6px;

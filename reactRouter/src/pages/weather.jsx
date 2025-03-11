@@ -39,9 +39,7 @@ const WeatherApp = () => {
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />
-        <button onClick={() => checkWeather(city)}>
-          <img src="../assets/images/search.png" alt="Search" />
-        </button>
+        <button onClick={() => checkWeather(city)}>Go</button>
       </div>
 
       {/* Mostrar mensaje de error si el nombre de la ciudad no es válido */}
@@ -61,23 +59,16 @@ const WeatherApp = () => {
       {/* Mostrar datos del clima si se obtiene correctamente */}
       {weatherData && !error && (
         <div className="weather" style={{ display: 'block' }}>
-          <img
-            src={`images/${weatherData.weather[0].main.toLowerCase()}.png`}
-            className="weather-icon"
-            alt={weatherData.weather[0].main}
-          />
           <h1 className="temp">{Math.round(weatherData.main.temp)}°c</h1>
           <h2 className="city">{weatherData.name}</h2>
           <div className="details">
             <div className="col">
-              <img src="images/humidity.png" alt="Humidity" />
               <div>
                 <p className="humidity">{weatherData.main.humidity}%</p>
                 <p>Humidity</p>
               </div>
             </div>
             <div className="col">
-              <img src="images/wind.png" alt="Wind Speed" />
               <div>
                 <p className="wind">{weatherData.wind.speed} km/h</p>
                 <p>Wind Speed</p>
