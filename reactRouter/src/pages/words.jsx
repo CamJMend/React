@@ -1,5 +1,5 @@
-// src/pages/WordList.js
 import React, { useEffect, useState } from "react";
+import './words.css';
 
 function WordList() {
   const [words, setWords] = useState([]);
@@ -30,7 +30,7 @@ function WordList() {
   return (
     <div>
       <h2>Lista de Palabras</h2>
-      <button onClick={() => setShowList(!showList)}>
+      <button id="ocultar" onClick={() => setShowList(!showList)}>
         {showList ? "Ocultar" : "Mostrar"} Lista
       </button>
       {showList && (
@@ -40,12 +40,12 @@ function WordList() {
               <li key={index}>{word}</li>
             ))}
           </ul>
-          <input
+          <input id="input-list"
             type="text"
             value={newWord}
             onChange={(e) => setNewWord(e.target.value)}
           />
-          <button onClick={addWord}>Agregar</button>
+          <button id="agregar" onClick={addWord}>Agregar</button>
           {warning && <p style={{ color: "red" }}>{warning}</p>}
         </>
       )}

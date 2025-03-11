@@ -11,6 +11,12 @@ const WeatherApp = () => {
   const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
   const checkWeather = async (cityName) => {
+    if (!cityName.trim()) {
+      setError(true);
+      setWeatherData(null);
+      return; 
+    }
+  
     setLoading(true);
     setError(false);
     try {
@@ -42,21 +48,18 @@ const WeatherApp = () => {
         <button onClick={() => checkWeather(city)}>Go</button>
       </div>
 
-      {/* Mostrar mensaje de error si el nombre de la ciudad no es válido */}
       {error && (
         <div className="error">
           <p>Invalid city name</p>
         </div>
       )}
 
-      {/* Mostrar mensaje de carga */}
       {loading && (
         <div className="loading">
           <p>Loading...</p>
         </div>
       )}
 
-      {/* Mostrar datos del clima si se obtiene correctamente */}
       {weatherData && !error && (
         <div className="weather" style={{ display: 'block' }}>
           <h1 className="temp">{Math.round(weatherData.main.temp)}°c</h1>
